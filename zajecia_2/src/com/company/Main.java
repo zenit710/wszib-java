@@ -5,15 +5,30 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        Employees employees = new Employees(new FileStore());
+        StoreInterface store;
+        Employees employees;
         Scanner scanner = new Scanner(System.in);
+        int mode = 0;
         int command = -1;
 
+        while (mode < 1 || mode > 2) {
+            System.out.println("mode: " + mode);
+            System.out.println("Select store mode: ");
+            System.out.println("1 - store employees in file");
+            System.out.println("2 - store employees in memory");
+
+            mode = scanner.nextInt();
+            System.out.println("mode: " + mode);
+        }
+
+        store = mode == 1 ? new FileStore() : new MemoryStore();
+        employees = new Employees(store);
+
         while (command != 0) {
-            System.out.println("Wybierz akcję, którą chcesz wykonać");
-            System.out.println("1 - Dodaj nowego pracownika");
-            System.out.println("2 - Pokaż pracowników");
-            System.out.println("0 - Zakończ program");
+            System.out.println("What you want to do?");
+            System.out.println("1 - Add new employee");
+            System.out.println("2 - Show employees");
+            System.out.println("0 - Exit");
 
             command = scanner.nextInt();
 
@@ -22,7 +37,16 @@ public class Main {
                     return;
 
                 case 1:
-                    System.out.println(employees.add());
+                    String name, surname;
+
+                    System.out.println("Provide name: ");
+                    name = scanner.next();
+
+                    System.out.println("Provide surname: ");
+                    surname = scanner.next();
+
+                    Employee e = employees.add(name, surname);
+                    System.out.println("Employee email address: " + e.getEmail());
                     break;
 
                 case 2:

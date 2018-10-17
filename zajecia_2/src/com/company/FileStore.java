@@ -24,7 +24,7 @@ public class FileStore implements StoreInterface {
             writer.println(line);
             writer.close();
         } catch (IOException e) {
-            System.out.println("Nie udało się dodać pracownika: " + e.getMessage());
+            System.out.println("Couldn't add new employee: " + e.getMessage());
         }
     }
 
@@ -56,7 +56,7 @@ public class FileStore implements StoreInterface {
 
             scanner.close();
         } catch (IOException e) {
-            System.out.println("Pracownicy nie mogą być przechowywani w pliku: " + e.getMessage());
+            System.out.println("Can't store employees in file: " + e.getMessage());
         }
 
         return employees;

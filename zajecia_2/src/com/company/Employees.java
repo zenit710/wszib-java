@@ -1,41 +1,30 @@
 package com.company;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Employees {
     private final String EMAIL_PATTERN = "%s.%s%s@mex.com";
 
     private StoreInterface store;
-    private Scanner scanner = new Scanner(System.in);
 
     public Employees(StoreInterface store) {
         this.store = store;
     }
 
-    public String add() {
-        String name, surname;
-
-        System.out.println("Podaj imię: ");
-        name = scanner.next();
-
-        System.out.println("Podaj nazwisko: ");
-        surname = scanner.next();
-
+    public Employee add(String name, String surname) {
         Employee employee = new Employee(name, surname);
-
         employee.setEmail(generateEmail(employee));
 
         store.add(employee);
 
-        return employee.getEmail();
+        return employee;
     }
 
     public void show() {
         ArrayList<Employee> employees = store.getArrayList();
 
-        for (int i = 0; i < employees.size(); i++) {
-            System.out.println(employees.get(i).__toString());
+        for (Employee e: employees) {
+            System.out.println(e.__toString());
         }
     }
 
