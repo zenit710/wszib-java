@@ -14,8 +14,8 @@ public class MemoryStore implements StoreInterface {
     public int getCountOfSameNames(Employee employee) {
         int count = 0;
 
-        for (int i = 0; i < store.size(); i++) {
-            if (employee.hasSameName(store.get(i))) {
+        for (Employee e: store) {
+            if (employee.hasSameName(e)) {
                 count++;
             }
         }
@@ -24,9 +24,7 @@ public class MemoryStore implements StoreInterface {
     }
 
     @Override
-    public void show() {
-        for (int i = 0; i < store.size(); i++) {
-            System.out.println(store.get(i).__toString());
-        }
+    public ArrayList<Employee> getArrayList() {
+        return store;
     }
 }

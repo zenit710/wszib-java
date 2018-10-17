@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        Employees employees = new Employees(new MemoryStore());
+        Employees employees = new Employees(new FileStore());
         Scanner scanner = new Scanner(System.in);
         int command = -1;
 

@@ -1,5 +1,6 @@
 package com.company;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Employees {
@@ -31,7 +32,11 @@ public class Employees {
     }
 
     public void show() {
-        store.show();
+        ArrayList<Employee> employees = store.getArrayList();
+
+        for (int i = 0; i < employees.size(); i++) {
+            System.out.println(employees.get(i).__toString());
+        }
     }
 
     private String generateEmail(Employee e) {
