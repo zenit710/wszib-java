@@ -1,4 +1,4 @@
-package com.company;
+package com.company.Employee;
 
 public class Employee {
     private String name;
@@ -34,7 +34,8 @@ public class Employee {
 
     public boolean hasSameName(Employee e)
     {
-        return name.equals(e.getName()) && surname.equals(e.getSurname());
+        return name.toLowerCase().equals(e.getName().toLowerCase())
+                && surname.toLowerCase().equals(e.getSurname().toLowerCase());
     }
 
     public String __toString() {

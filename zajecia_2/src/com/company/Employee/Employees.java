@@ -1,5 +1,6 @@
-package com.company;
+package com.company.Employee;
 
+import com.company.Store.StoreInterface;
 import java.util.ArrayList;
 
 public class Employees {

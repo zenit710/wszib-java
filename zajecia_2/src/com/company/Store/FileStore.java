@@ -1,5 +1,6 @@
-package com.company;
+package com.company.Store;
 
+import com.company.Employee.Employee;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;

@@ -1,5 +1,10 @@
 package com.company;
 
+import com.company.Employee.Employee;
+import com.company.Employee.Employees;
+import com.company.Store.FileStore;
+import com.company.Store.MemoryStore;
+import com.company.Store.StoreInterface;
 import java.util.Scanner;
 
 public class Main {
