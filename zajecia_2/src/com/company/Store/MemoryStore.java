@@ -4,7 +4,7 @@ import com.company.Employee.Employee;
 import java.util.ArrayList;
 
 public class MemoryStore implements StoreInterface {
-    ArrayList<Employee> store = new ArrayList<>();
+    private ArrayList<Employee> store = new ArrayList<>();
 
     @Override
     public void add(Employee employee) {
