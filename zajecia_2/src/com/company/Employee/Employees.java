@@ -25,7 +25,7 @@ public class Employees {
         ArrayList<Employee> employees = store.getArrayList();
 
         for (Employee e: employees) {
-            System.out.println(e.__toString());
+            System.out.println(e.toString());
         }
     }
 

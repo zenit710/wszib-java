@@ -38,7 +38,8 @@ public class Employee {
                 && surname.toLowerCase().equals(e.getSurname().toLowerCase());
     }
 
-    public String __toString() {
+    @Override
+    public String toString() {
         return name + " " + surname + " - " + email;
     }
 }
